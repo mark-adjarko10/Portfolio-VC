@@ -232,14 +232,12 @@ window.addEventListener('scroll', () => {
   });
 });
 </script>
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
 <script>
     emailjs.init({
         publicKey: "SIJDYyYX-Z9Vu76vw"
     });
 
-    document.querySelector("#contact-form").addEventListener("submit", function(event) {
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
         event.preventDefault();
 
         emailjs.sendForm(
@@ -253,6 +251,7 @@ window.addEventListener('scroll', () => {
         .catch((error) => {
             console.error("Error:", error);
             alert("Failed to send message.");
+            console.log(error);
         });
     });
 </script>
