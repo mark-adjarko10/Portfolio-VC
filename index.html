@@ -233,13 +233,14 @@ window.addEventListener('scroll', () => {
 });
 </script>
 <script>
-    emailjs.init({
-        publicKey: "SlJDYyYX-Z9vu76vw"
-    });
+  (function(){
+    emailjs.init( "SlJDYyYX-Z9vu76vw")
+    })();
     </script>
     
     <script>
 
+document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("contact-form").addEventListener("submit", function(event) {
         event.preventDefault();
 
@@ -257,6 +258,7 @@ window.addEventListener('scroll', () => {
             console.log(error);
         });
     });
+  });
 </script>
 
 </body>
