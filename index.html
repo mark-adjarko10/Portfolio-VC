@@ -210,7 +210,7 @@
       <textarea id="message" rows="6" placeholder="Tell me a little about your project..."></textarea>
     </div>
 
-    <button type="submit">Send Message <span>→</span></button>
+    <button type="submit" onclick="sendMail()">Send Message <span>→</span></button>
   </form>
 </section>
 
@@ -233,34 +233,20 @@ window.addEventListener('scroll', () => {
   });
 });
 </script>
-<script>
-  (function(){
-    emailjs.init( "SlJDYyYX-Z9vu76vw")
-    })();
-    </script>
-    
-    <script>
 
-document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("contact-form").addEventListener("submit", function(event) {
-        event.preventDefault();
-
-        emailjs.sendForm(
-            "service_rgfmfac",
-            "template_w2ef0ki",
-            this
-        )
-        .then(() => {
-            alert("Message sent successfully!");
-        })
-        .catch((error) => {
-            console.error("Error:", error);
-            alert("Failed to send message.");
-            console.log(error);
-        });
-    });
-  });
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
 </script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "SlJDYyYX-Z9vu76vw",
+      });
+   })();
+</script>
+
+<script src="script.js"></script>
+
 
 </body>
 </html>
